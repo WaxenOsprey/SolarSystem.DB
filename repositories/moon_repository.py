@@ -22,3 +22,11 @@ def select_moons(id):
         moon = Moon(row['name'], planet, row['orbital_period'], row['mean_radius'], row['id'] )
         moons.append(moon)
     return moons
+
+def select_moon(moon_id):
+    sql = "SELECT * FROM moons WHERE id = %s"
+    values = [moon_id]
+    moons = run_sql(sql, values)
+    moon = moons[0]
+    return moon
+    

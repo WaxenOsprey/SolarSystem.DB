@@ -12,3 +12,10 @@ def show_moons(id):
     moons = moon_repository.select_moons(id)
     
     return render_template("planets/moons/index.html", local_moons = moons, planet = planet)
+
+@moons_blueprint.route('/moons/<moon_id>')
+def show_the_moon(moon_id):
+    moon = moon_repository.select_moon(moon_id)
+    # moon = moons[0]
+    return render_template("planets/moons/show.html", moon = moon)
+    

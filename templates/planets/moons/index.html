@@ -5,7 +5,7 @@
 {% for moon in local_moons %}
   <div class="moon">
     <div class="content">
-      <a href="/planets/{{planet.id}}/moons/{{moon.id}}">{{moon.name}}</a>
+      <a href="/moons/{{moon.id}}">{{moon.name}}</a>
       <div class="mass">
         {{moon.planet.name}}
         <span class="temp">{{planet.orbital_period}}</span>
