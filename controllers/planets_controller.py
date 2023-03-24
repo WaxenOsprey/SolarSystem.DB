@@ -19,22 +19,21 @@ def show_planet(id):
 
 
 # GET '/planets/new' (THIS GOES TO PAGE WITH FOR NEW PLANET)
-# @planets_blueprint.route("/planets/new", methods=['GET'])
-# def new_book():
-#     authors = author_repository.select_all()
-#     return render_template("books/new.html", all_authors = authors)
+@planets_blueprint.route("/planets/new", methods=['GET'])
+def new_planet():
+    return render_template("planets/new.html")
 
 # CREATE (THIS DEALS WITH THE REQUEST SEND BY THE FORM AND CREATES A NEW BOOK)
-# POST '/books'
-# @books_blueprint.route("/books",  methods=['POST']) # number one 
-# def create_book(): # number two
-#     title    = request.form['title']  # number two 
-#     genre = request.form['genre']  # number two
-#     publisher   = request.form['publisher'] # number two
-#     author  = author_repository.select(request.form['author_id']) # number three 
-#     book = Book(title, genre, publisher, author) # number two
-#     book_repository.save(book) # number three 
-    # return redirect("/books/") # number four 
+# POST '/planets'
+@planets_blueprint.route("/planets",  methods=['POST']) # number one 
+def create_planet(): # number two
+    name = request.form['name']  # number two 
+    mass = request.form['mass']  # number two
+    temp = request.form['temp'] # number two
+    gravity = request.form['gravity']
+    planet = Planet(name, mass, temp, gravity) # number two
+    planet_repository.save(planet) # number three 
+    return redirect("/planets") # number four 
 
 # EDIT
 # GET '/books/<id>/edit'
@@ -57,9 +56,9 @@ def show_planet(id):
 #     book_repository.update(book)
 #     return redirect('/books')
 
-# # DELETE
+# # DELETE (AT THIS POINT THIS RELIES A DELETE BUTTON AJOINED TO EACH PLANET, OTHERWISE WE NEED A GET and a DELETE page, then a POST)
 # # DELETE '/books/<id>'
-# @books_blueprint.route("/books/<id>/delete", methods=['POST'])
-# def delete_book(id):
-#     book_repository.delete(id)
-#     return redirect('/books')
+@planets_blueprint.route("/planets/<id>/delete", methods=['POST'])
+def delete_book(id):
+    planet_repository.delete(id)
+    return redirect('/planets')

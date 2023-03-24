@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/planets" method="post">
+
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+  </div>
+
+  <div>
+    <label for="mass">Mass:</label>
+    <input type="text" id="mass" name="mass" placeholder="Mass" required>
+  </div>
+
+  <div>
+    <label for="temp">Temperature:</label>
+    <input type="text" id="temp" name="temp" placeholder="Temperature" required>
+  </div>
+
+  <div>
+    <label for="gravity">Gravity:</label>
+    <input type="text" id="gravity" name="gravity" placeholder="Gravity" required>
+  </div>
+
+  <button type="submit">Add Planet</button>
+
+</form>
+
+{% endblock %}
