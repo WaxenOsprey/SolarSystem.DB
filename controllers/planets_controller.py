@@ -35,26 +35,24 @@ def create_planet(): # number two
     planet_repository.save(planet) # number three 
     return redirect("/planets") # number four 
 
-# EDIT
-# GET '/books/<id>/edit'
-# @books_blueprint.route("/books/<id>/edit", methods=['GET'])
-# def edit_book(id):
-#     book = book_repository.select(id)
-#     authors = author_repository.select_all()
-#     return render_template('books/edit.html', book = book, all_authors = authors)
+# EDIT (GETS EDIT PAGE/FORM)
+# GET '/planets/<id>/edit'
+@planets_blueprint.route("/planets/<id>/edit", methods=['GET'])
+def edit_planet(id):
+    planet = planet_repository.select(id)
+    return render_template('planets/edit.html', planet = planet)
 
-# # UPDATE
-# # PUT '/books/<id>'
-# @books_blueprint.route("/books/<id>", methods=['POST'])
-# def update_book(id):
-#     title    = request.form['title']
-#     genre = request.form['genre']
-#     publisher   = request.form['publisher']
-#     author  = author_repository.select(request.form['author_id'])
-#     book = Book(title, genre, publisher, author, id)
-#     print(book.author.full_name())
-#     book_repository.update(book)
-#     return redirect('/books')
+# UPDATE (POSTS EDIT PAGE CONTENTS, to edit data)
+# PUT '/planets/<id>'
+@planets_blueprint.route("/planets/<id>", methods=['POST'])
+def update_planet(id):
+    name = request.form['name']
+    mass = request.form['mass']
+    temp = request.form['temp']
+    gravity = request.form['temp']
+    planet = Planet(name, mass, temp, gravity, id)
+    planet_repository.update(planet)
+    return redirect('/planets')
 
 # # DELETE (AT THIS POINT THIS RELIES A DELETE BUTTON AJOINED TO EACH PLANET, OTHERWISE WE NEED A GET and a DELETE page, then a POST)
 # # DELETE '/books/<id>'

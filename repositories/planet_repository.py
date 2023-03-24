@@ -32,18 +32,16 @@ def select(id):
     values = [id]
     results = run_sql(sql, values)
 
-    # checking if the list returned by `run_sql(sql, values)` is empty. Empty lists are 'fasly' 
-    # Could alternativly have..
-    # if len(results) > 0 
+    # checking if the list returned by `run_sql(sql, values)` is empty. Empty lists are false.
     if results:
         result = results[0]
         planet = Planet(result['name'], result['mass'], result['temp'], result['gravity'], result['id'] )
     return planet
 
 
-def delete_all():
-    sql = "DELETE  FROM planets"
-    run_sql(sql)
+# def delete_all():
+#     sql = "DELETE  FROM planets"
+#     run_sql(sql)
 
 
 def delete(id):

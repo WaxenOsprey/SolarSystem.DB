@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/planets/{{planet.id}}" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{planet.name}}" required>
+  </div>
+
+  <div>
+    <label for="mass">Mass:</label>
+    <input type="text" id="mass" name="mass" value="{{planet.mass}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="temperature">Temperature:</label>
+    <input type="text" id="temp" name="temp" value="{{planet.temp}}" required autofocus>
+  </div>
+  
+  <div>
+    <label for="gravity">Gravity:</label>
+    <input type="text" id="gravity" name="gravity" value="{{planet.gravity}}" required autofocus>
+  </div>
+
+  <button type="submit">Update Planet</button>
+
+</form>
+
+{% endblock %}
