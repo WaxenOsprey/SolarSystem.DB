@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<p>This is the form for a new moon</p>
+<form action="/moons" method="post">
+
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+  </div>
+
+  <div>
+    <label for="orbital_period">Orbital Period:</label>
+    <input type="text" id="orbital_period" name="orbital_period" placeholder="Orbital Period" required>
+  </div>
+
+  <div>
+    <label for="mean_radius">Mean Radius:</label>
+    <input type="text" id="mean_radius" name="mean_radius" placeholder="Mean Radius" required>
+  </div>
+
+  <button type="submit">Add Moon</button>
+
+</form>
+
+{% endblock %}

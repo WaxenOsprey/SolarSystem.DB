@@ -1,24 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
+<p>THIS IS THE PAGE THAT SHOWS ALL MOONS FOR {{ planet.name }}</p>
 
 {% for moon in local_moons %}
-  <div class="moon">
-    <div class="content">
-      <a href="/moons/{{moon.id}}">{{moon.name}}</a>
-      <div class="mass">
-        {{moon.planet.name}}
-        <span class="temp">{{planet.orbital_period}}</span>
-        <p>{{planet.mean_radius}}</p>
-      </div>
-      <div class="buttons">
-
-        <form class="delete-form" action="/planets/{{planet.id}}/moons/{{moon.id}}/delete" method="POST">
-          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
-        </form>
-      </div>
-    </div>
-  </div>
+  <p>{{ moon.name }}</p>
+  <a href="/planets/{{ planet.id }}/moons/{{ moon.id }}">view individual moon</a>
+  <a href="/planets/{{ planet.id }}/moons/new">new moon</a>
 {% endfor %}
 
 {% endblock %}
