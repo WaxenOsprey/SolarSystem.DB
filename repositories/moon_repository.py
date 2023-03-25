@@ -23,10 +23,25 @@ def select_moons(id):
         moons.append(moon)
     return moons
 
-def select_moon(moon_id):
+def select_moon(moon_id, planet_id):
     sql = "SELECT * FROM moons WHERE id = %s"
     values = [moon_id]
-    moons = run_sql(sql, values)
-    moon = moons[0]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        planet = planet_repository.select(planet_id)
+        moon = Moon(result['name'], planet, result['orbital_period'], result['mean_radius'], result['id'] )
     return moon
-    
+
+def update(moon):
+    sql = "UPDATE moons SET (name, planet_id, orbital_period, mean_radius) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [moon.name, moon.planet.id, moon.orbital_period, moon.mean_radius, moon.id]
+    print(values)
+    run_sql(sql, values)
+
+# def update(planet):
+#     sql = "UPDATE planets SET (name, mass, temp, gravity) = (%s, %s, %s, %s) WHERE id = %s"
+#     values = [planet.name, planet.mass, planet.temp, planet.gravity, planet.id]
+#     print(values)
+#     run_sql(sql, values)
+

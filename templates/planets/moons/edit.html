@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/planets/{{ planet.id }}/moons/{{ moon.id }}/edit" method="post">
+    
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{moon.name}}" required>
+      </div>
+    
+      <div>
+        <label for="orbital_period">Orbital Period:</label>
+        <input type="text" id="orbital_period" name="orbital_period" value="{{moon.orbital_period}}" required autofocus>
+      </div>
+    
+      <div>
+        <label for="mean_radius">Mean Radius:</label>
+        <input type="text" id="mean_radius" name="mean_radius" value="{{moon.mean_radius}}" required autofocus>
+      </div>
+    
+      <button type="submit">Update Moon</button>
+
+</form>
+
+{% endblock %}

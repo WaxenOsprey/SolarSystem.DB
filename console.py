@@ -14,5 +14,4 @@ import repositories.moon_repository as moon_repository
 # for moon in moons:
 #     print(f"{moon.name}")
 
-moon = moon_repository.select_moon(1)
-print(f"{moon.name}")
+update_moon()
