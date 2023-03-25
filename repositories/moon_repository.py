@@ -39,9 +39,9 @@ def update(moon):
     print(values)
     run_sql(sql, values)
 
-# def update(planet):
-#     sql = "UPDATE planets SET (name, mass, temp, gravity) = (%s, %s, %s, %s) WHERE id = %s"
-#     values = [planet.name, planet.mass, planet.temp, planet.gravity, planet.id]
-#     print(values)
-#     run_sql(sql, values)
+
+def delete(moon_id):
+    sql = "DELETE  FROM moons WHERE id = %s"
+    values = [moon_id]
+    run_sql(sql, values)
 

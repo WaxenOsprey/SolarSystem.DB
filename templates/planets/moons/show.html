@@ -6,6 +6,11 @@
     <a href="/planets/{{planet.id}}/moons/{{moon.id}}/edit">Edit</a>
 
     <hr>
+
+    <form class="delete-form" action="/planets/{{planet.id}}/moons/{{moon.id}}/delete" method="POST">
+      <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+    </form>
+
   </div>
 
 {% endblock %}

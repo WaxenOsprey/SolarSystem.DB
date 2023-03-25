@@ -66,17 +66,8 @@ def update_moon(planet_id, moon_id):
     return redirect(url_for('planets.planets'))
 
 
-# @planets_blueprint.route("/planets/<id>", methods=['POST'])
-# def update_planet(id):
-#     name = request.form['name']
-#     mass = request.form['mass']
-#     temp = request.form['temp']
-#     gravity = request.form['temp']
-#     planet = Planet(name, mass, temp, gravity, id)
-#     planet_repository.update(planet)
-#     return redirect('/planets')
-
-
-
-
-# update_moon
+@moons_blueprint.route("/planets/<planet_id>/moons/<moon_id>/delete", methods=['POST'])
+def delete_moon(moon_id, planet_id):
+    moon_repository.delete(moon_id)
+    # needs better url
+    return redirect(url_for('planets.planets'))

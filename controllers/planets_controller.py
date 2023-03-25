@@ -58,7 +58,7 @@ def update_planet(id):
     planet_repository.update(planet)
     return redirect('/planets')
 
-# # DELETE (AT THIS POINT THIS RELIES A DELETE BUTTON AJOINED TO EACH PLANET, OTHERWISE WE NEED A GET and a DELETE page, then a POST)
+# # DELETE (AT THIS POINT THIS RELIES A DELETE BUTTON AJOINED TO EACH PLANET, OTHERWISE WE NEED to put it in show planet)
 # # DELETE '/planets/<id>'
 @planets_blueprint.route("/planets/<id>/delete", methods=['POST'])
 def delete_planet(id):
