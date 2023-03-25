@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <p>This is the form for a new moon</p>
-<form action="/moons" method="post">
+<form action="/planets/{{ planet_id }}/moons/new" method="post">
 
   <div>
     <label for="name">Name:</label>

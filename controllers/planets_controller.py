@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.planet import Planet
 import repositories.planet_repository as planet_repository
+import repositories.visit_repository as visit_repository
+import repositories.user_repository as user_repository
 
 planets_blueprint = Blueprint("planets", __name__)
 
@@ -15,6 +17,8 @@ def planets():
 @planets_blueprint.route("/planets/<id>", methods=['GET'])
 def show_planet(id):
     planet = planet_repository.select(id)
+    user = user_repository.select_active_user()
+    visit_repository.save_visit(user, planet)
     return render_template('planets/show.html', planet = planet) 
 
 
@@ -23,7 +27,7 @@ def show_planet(id):
 def new_planet():
     return render_template("planets/new.html")
 
-# CREATE (THIS DEALS WITH THE REQUEST SEND BY THE FORM AND CREATES A NEW BOOK)
+# CREATE (THIS DEALS WITH THE REQUEST SENT BY THE FORM AND CREATES A NEW BOOK)
 # POST '/planets'
 @planets_blueprint.route("/planets",  methods=['POST']) # number one 
 def create_planet(): # number two

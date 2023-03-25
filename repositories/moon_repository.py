@@ -4,7 +4,7 @@ from models.moon import Moon
 import repositories.planet_repository as planet_repository
 
 def save(moon):
-    sql = "INSERT INTO moons (name, planet.id, orbital_period, mean_radius) VALUES (%s, %s, %s, %s) RETURNING *"
+    sql = "INSERT INTO moons (name, planet_id, orbital_period, mean_radius) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [moon.name, moon.planet.id, moon.orbital_period, moon.mean_radius]
     results = run_sql(sql, values)
     id = results[0]['id']
