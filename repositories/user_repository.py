@@ -11,6 +11,12 @@ def save_user(user):
     user.id = results[0]['id']
     return user
 
+def make_other_users_inactive(user):
+    id = user.id
+    sql = "UPDATE users SET active = False WHERE id != %s"
+    values = [id]
+    run_sql( sql, values )
+
 def select_active_user():
     sql = "SELECT * FROM users WHERE active = %s"
     values = [True]

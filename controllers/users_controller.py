@@ -13,6 +13,7 @@ def create_user():
     active = True
     user = User(name, active)
     user_repository.save_user(user)
+    user_repository.make_other_users_inactive(user)
     return redirect(url_for('planets.planets'))
 
 users_blueprint.route("/exit", method=['GET'])
