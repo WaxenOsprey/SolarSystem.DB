@@ -47,7 +47,7 @@ def create_moon(planet_id): # number two
     visit_repository.save_visit(user, moon)
     visit = visit_repository.select_visit(user, moon)
     visit.mark_discovered()
-    visit_repository.update_status(visit)
+    visit_repository.update_visit(visit)
     # needs better url 
     return redirect(url_for('planets.planets'))
 
@@ -66,11 +66,18 @@ def update_moon(planet_id, moon_id):
     orbital_period = request.form['orbital_period']
     mean_radius = request.form['mean_radius']
     planet = planet_repository.select(planet_id)
-    moon = Moon(name, planet, orbital_period, mean_radius, moon_id)
-    moon_repository.update(moon)
+    new_moon = Moon(name, planet, orbital_period, mean_radius, moon_id)
+    
+    user = user_repository.select_active_user()
+    moon_to_update = moon_repository.select_moon(moon_id, planet_id)
+    visit_to_update = visit_repository.select_visit(user, moon_to_update)
+    visit_to_update.mark_altered()
+    visit_to_update.location = new_moon.name
+    visit_repository.update_visit(visit_to_update)    
+    moon_repository.update(new_moon)
+
     # needs better url
     return redirect(url_for('planets.planets'))
-
 
 @moons_blueprint.route("/planets/<planet_id>/moons/<moon_id>/delete", methods=['POST'])
 def delete_moon(moon_id, planet_id):
@@ -78,7 +85,7 @@ def delete_moon(moon_id, planet_id):
     user = user_repository.select_active_user()
     visit = visit_repository.select_visit(user, moon)
     visit.mark_destroyed()
-    visit_repository.update_status(visit)
+    visit_repository.update_visit(visit)
     
     moon_repository.delete(moon_id)
 
