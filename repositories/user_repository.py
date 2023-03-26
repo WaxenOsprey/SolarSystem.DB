@@ -19,3 +19,9 @@ def select_active_user():
         result = results[0]
         user = User(result['name'], result['active'], result['id'])
     return user
+
+# def select_all_users():
+#     sql = "SELECT * FROM users"
+
+    # problem here as if you switch active to false then how to do pull data? Solution: have a drop down menu for all users at the end.
+    # BETTER SOLUTION log in function sets all others to False

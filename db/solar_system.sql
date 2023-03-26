@@ -31,7 +31,10 @@ CREATE TABLE users (
 CREATE TABLE visits (
   id SERIAL PRIMARY KEY,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
-  location_name VARCHAR(255)
+  location_name VARCHAR(255),
+  discovered BOOL DEFAULT false,
+  altered BOOL DEFAULT false, 
+  destroyed BOOL DEFAULT false
 );
 
 INSERT INTO planets (name, mass, temp, gravity) VALUES ('Mercury', '0.055 Earths', '-73℃ - 164℃', '0.38g');
