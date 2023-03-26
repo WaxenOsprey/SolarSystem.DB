@@ -6,14 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <title>Planets</title>
+  <title>Solar System</title>
 </head>
-<body>
+<body class="home-body">
   <header>
-    <nav>
+    <nav class="base-menu">
       <ul class="menu">
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('planets.planets') }}">Planets</a></li>
+        <li><a href="/">Log in</a></li>
+        <li><a href="{{ url_for('planets.planets') }}">Planets in System: </a></li>
+        <li><a href=""></a>Exit</li>
       </ul>
     </nav>
   </header>

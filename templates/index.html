@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 {% block home %}
-<section id="home-image">
-    <p>homepage</p>
-    <p>This is the form for a user to enter their name</p>
-<form action="/" method="post">
 
-  <div>
+<section id="home-page">
+    <p>Login</p>
+    <p>This is the form for a user to enter their name</p>
+
+    <div class="dropdown">
+      <button class="dropbtn">Login</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+
+<form action="/" method="post">
     <label for="name"></label>
     <input type="text" id="name" name="name" placeholder="Name" required autofocus>
-
   <button type="submit">Add User</button>
-
 </form>
-    <!-- <p><a href="{{ url_for('planets.planets') }}">enter</a></p> -->
+
 </section>
+
 {% endblock %}

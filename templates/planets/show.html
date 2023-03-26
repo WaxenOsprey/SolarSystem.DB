@@ -7,8 +7,16 @@
     <p>{{ planet.mass }}</p>
     <p>{{ planet.temp }}</p>
     <p>{{ planet.gravity }}</p>
+    <img src="{{ planet.image }}" alt="The planet {{ planet.name }}" width="650" height="650">
     <p><a href="/planets/{{planet.id}}/edit">Edit</a></p>
     <a href="/planets/{{planet.id}}/moons">Moons</a>
+
+
+    <div class="buttons">
+
+      <form class="delete-form" action="/planets/{{planet.id}}/delete" method="POST">
+        <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+      </form>
   </div>
 
 {% endblock %}

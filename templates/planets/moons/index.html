@@ -6,7 +6,7 @@
 {% for moon in local_moons %}
   <p>{{ moon.name }}</p>
   <a href="/planets/{{ planet.id }}/moons/{{ moon.id }}">view individual moon</a>
-  <a href="/planets/{{ planet.id }}/moons/new">new moon</a>
 {% endfor %}
+<a href="/planets/{{ planet.id }}/moons/new">new moon</a>
 
 {% endblock %}

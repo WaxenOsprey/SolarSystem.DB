@@ -75,6 +75,7 @@ def update_planet(id):
     visit_to_update.mark_altered()
     visit_to_update.location = new_planet.name
     visit_repository.update_visit(visit_to_update)
+    
     planet_repository.update(new_planet)
 
 
