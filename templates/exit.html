@@ -1,11 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>this is the exit page which will display a report of the users activities</p>
-<h1>{{ user.name }}'s log</h1>
-<p>Total Visits: {{ visits_total }}</p>
-<p>Total Discoveries: {{ discovered_total }}</p>
-<p>Total Alterations: {{ altered_total }}</p>
-<p>Total Destructions: {{ destroyed_total }}</p>
+
+<div class="report">
+    <h1>{{ user.name }}'s System Log</h1>
+
+    <p>Total Visits: {{ visits_total }}</p>
+    <ul class="visits-list">
+    {% for visit in visits %}
+        <li>
+        <p class="locations">{{ visit.location }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <ul class="disoveries-list">
+    <p>Total Discoveries: {{ discovered_total }}</p>
+    {% for discovery in discoveries %}
+        <li>
+        <p class="locations"> {{ discovery.location }} </p>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <ul class="alterations-list">
+    <p>Total Alterations: {{ altered_total }}</p>
+    {% for alteration in alterations %}
+        <li>
+        <p class="locations"> {{ alteration.location }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <ul class="destructions-list">
+    <p>Total Destructions: {{ destroyed_total }}</p>
+    {% for destruction in destructions %}
+        <li>
+        <p class="locations"> {{ destruction.location }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+
+</div>
+
+
+
     
 {% endblock  %}

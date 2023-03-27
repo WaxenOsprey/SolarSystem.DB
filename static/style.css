@@ -3,16 +3,72 @@ body, html {
   font-family: 'Roboto Condensed';font-size: 22px;color: aquamarine;
 }
 
+.login-panel {
+  margin: 40px;
+}
+
 .site-title {
   font-size: 48px;
   font-weight: bolder;
   color: cornflowerblue;
+  margin: 40px;
 }
+
+.site-title > a:link {
+  text-decoration: none;
+  font-size: 48px;
+  font-weight: bolder;
+  color: cornflowerblue;
+}
+
+.site-title > a:visited {
+  text-decoration: none;
+  font-size: 48px;
+  font-weight: bolder;
+  color: cornflowerblue;
+}
+
+.site-title > a:hover {
+  text-decoration: none;
+  font-size: 48px;
+  font-weight: bolder;
+  color: hotpink;
+}
+
+.site-title > a:active {
+  text-decoration: none;
+  font-size: 48px;
+  font-weight: bolder;
+  color: red;
+}
+
 .base-menu {
   display: flex;
   flex-direction: row;
   align-content: center;
 }
+
+.menu {
+  align-items: center;
+}
+
+.planet {
+  padding: 40px;
+}
+
+
+.hide {
+  display: none;
+}
+
+.planet > a:hover + .hide {
+  display: inline;
+  color: aquamarine;
+  font-size: 36px;
+}
+
+
+
 
 .menu {
   display: flex;
@@ -54,6 +110,15 @@ ul {
   color: red;
 }
 
+.report {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 .home-body {
   background-color: black;
@@ -67,10 +132,20 @@ ul {
   background-size: cover;
 }
 
+.report > ul > li {
+  display: inline;
+}
 
-/* .content {
-  border-width: 2px;
-  border-bottom: 2px;
-  border-color: aquamarine;
-  border-style: solid;
-} */
+.report > ul > li > p {
+  display: inline;
+  color: #ff6600
+}
+
+.single-planet-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 40px;
+}

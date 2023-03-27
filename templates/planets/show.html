@@ -1,23 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div>
-    <h1>{{ planet.name }}</h1>
-    <p>Mass: {{ planet.mass }}</p>
-    <p>Temperature: {{ planet.temp }}</p>
-    <p>Gravity: {{ planet.gravity }}</p>
-    <img src="{{ planet.image }}" alt="The planet {{ planet.name }}" width="650" height="650">
-    <p><a href="/planets/{{planet.id}}/edit">Edit</a></p>
+    <div class="single-planet-container">
+      <div class="planet-overview">
+        <h1>{{ planet.name }}</h1>
+
+        <p>Mass: {{ planet.mass }}</p>
+        <p>Temperature: {{ planet.temp }}</p>
+        <p>Gravity: {{ planet.gravity }}</p>
+      </div>
+
+      <div class="planet-image">
+        <img src="{{ planet.image }}" alt="The planet {{ planet.name }}" width="50%" height="50%">
+      </div>
+
+    </div>
+
+    <nav class="planet-nav">
+    <a href="/planets/{{planet.id}}/edit">Edit</a>
     <a href="/planets/{{planet.id}}/moons">Moons</a>
 
+    <form class="delete-form" action="/planets/{{planet.id}}/delete" method="POST">
+      <button class="destroy-button"><i class="fa-solid fa-bomb fa-2xl" style="color: #ed0202;"></i></button>
+    </form>
+    </nav>
+    
 
-    <div class="buttons">
-
-      <form class="delete-form" action="/planets/{{planet.id}}/delete" method="POST">
-        <button class="destroy-button"><i class="fa-light fa-explosion fa-2xl" style="color: #eb0f1a;"></i></button>
-      </button>
-      </form>
-  </div>
 
 {% endblock %}
 

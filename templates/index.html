@@ -2,7 +2,8 @@
 {% block content %}
 
 <section id="home-page">
-    <p>Login</p>
+  <div class="login-panel">
+    <p>Existing user login:</p>
 
 
     <div class="dropdown">
@@ -13,14 +14,13 @@
         {% endfor %}
       </div>
     </div>
-
-<p>This is the form for a user to enter their name</p>
-<form action="/" method="post">
-    <label for="name"></label>
-    <input type="text" id="name" name="name" placeholder="Name" required autofocus>
-  <button type="submit">Add User</button>
-</form>
-
+    <p>This is the form for a user to enter their name</p>
+    <form action="/" method="post">
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+      <button type="submit">Add User</button>
+    </form>
+  </div>
 </section>
 
 
