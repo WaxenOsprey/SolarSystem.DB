@@ -52,6 +52,6 @@ def delete(id):
 
 def update(planet):
     sql = "UPDATE planets SET (name, mass, temp, gravity, image) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [planet.name, planet.mass, planet.temp, planet.gravity, planet.id, planet.image]
+    values = [planet.name, planet.mass, planet.temp, planet.gravity, planet.image, planet.id]
     print(values)
     run_sql(sql, values)

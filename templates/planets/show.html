@@ -2,11 +2,10 @@
 {% block content %}
 
   <div>
-    <p>{{ planet.name }}</p>
-    <hr>
-    <p>{{ planet.mass }}</p>
-    <p>{{ planet.temp }}</p>
-    <p>{{ planet.gravity }}</p>
+    <h1>{{ planet.name }}</h1>
+    <p>Mass: {{ planet.mass }}</p>
+    <p>Temperature: {{ planet.temp }}</p>
+    <p>Gravity: {{ planet.gravity }}</p>
     <img src="{{ planet.image }}" alt="The planet {{ planet.name }}" width="650" height="650">
     <p><a href="/planets/{{planet.id}}/edit">Edit</a></p>
     <a href="/planets/{{planet.id}}/moons">Moons</a>

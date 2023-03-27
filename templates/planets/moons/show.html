@@ -3,10 +3,9 @@
 
   <div>
     <p>{{ moon.name }} this is the page for an individual moon</p>
-    <p><img src="{{ moon.image }}" alt="The moon {{ moon.name }}"></p>
+    <p><img src="{{ moon.image }}" alt="The moon {{ moon.name }}" width="550" height="550"></p>
     <a href="/planets/{{planet.id}}/moons/{{moon.id}}/edit">Edit</a>
 
-    <hr>
 
     <form class="delete-form" action="/planets/{{planet.id}}/moons/{{moon.id}}/delete" method="POST">
       <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>

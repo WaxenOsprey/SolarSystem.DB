@@ -6,17 +6,12 @@
   <div class="planet">
     <div class="content">
       <a href="/planets/{{planet.id}}">{{planet.name}}</a>
-      <div class="mass">
-        {{planet.mass}}
-        <span class="temp">{{planet.temp}}</span>
-        <p><i>{{planet.gravity}}</i></p>
-      </div>
-      <a href="/planets/new">New Planet</a>
-        </form>
-      </div>
     </div>
+    <img src="{{planet.image}}" alt="planet image" width="10%" height="10%">
   </div>
 </div>
 {% endfor %}
+
+<a href="/planets/new">New Planet</a>
 
 {% endblock %}

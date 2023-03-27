@@ -35,3 +35,18 @@ def select_all_users():
         user = User(row['name'], row['active'], row['id'])
         users.append(user)
     return users
+
+def select_user_by_id(user_id):
+    sql = "SELECT * FROM users WHERE id = %s"
+    values = [user_id]
+    results = run_sql( sql, values)
+    if results:
+        result = results[0]
+        user = User(result['name'], result['active'], result['id'])
+    return user
+
+def login_user(user):
+    user.active = True
+    sql = "UPDATE users SET (name, active) = (%s, %s) WHERE id = %s"
+    values = [user.name, user.active, user.id]
+    run_sql(sql, values)

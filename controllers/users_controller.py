@@ -21,10 +21,13 @@ def create_user():
     user_repository.make_other_users_inactive(user)
     return redirect(url_for('planets.planets'))
 
-# @users_blueprint.route("/login", methods=['POST'])
-# def login_user():
-#     name = request.form['name']
+@users_blueprint.route("/users/<user_id>", methods=['GET'])
+def log_in_user(user_id):
+    user = user_repository.select_user_by_id(user_id)
+    user_repository.make_other_users_inactive(user)
+    user_repository.login_user(user)
+    return redirect(url_for('planets.planets'))
 
-users_blueprint.route("/exit", method=['GET'])
+@users_blueprint.route("/exit", methods=['GET'])
 def exit():
-    return render_template("exit.html")
+    return render_template('exit.html')

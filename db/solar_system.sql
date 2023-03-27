@@ -52,5 +52,8 @@ INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Pluto', '0.055 E
 INSERT INTO moons (name, planet_id, orbital_period, mean_radius, image) VALUES ('The Moon', 3, '27 days', '1737km', 'https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg');
 INSERT INTO moons (name, planet_id, orbital_period, mean_radius, image) VALUES ('Phobos', 4, '0.3 days', '11.2km', 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Phobos_colour_2008.jpg');
 INSERT INTO moons (name, planet_id, orbital_period, mean_radius, image) VALUES ('Deimos', 4, '1.2 days', '6.2km', 'https://upload.wikimedia.org/wikipedia/commons/8/86/NASA-Deimos-MarsMoon-20090221.jpg');
-
+INSERT INTO moons (name, planet_id, orbital_period, mean_radius, image) VALUES ('Io', 5, '1.7 days', '1821km', 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Io_highest_resolution_true_color.jpg');
+INSERT INTO moons (name, planet_id, orbital_period, mean_radius, image) VALUES ('Europa', 5, '3.5 days', '1560km', 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Europa-moon-with-margins.jpg');
+INSERT INTO moons (name, planet_id, orbital_period, mean_radius, image) VALUES ('Ganymede', 5, '7.1 days', '2634km', 'https://upload.wikimedia.org/wikipedia/commons/2/21/Ganymede_-_Perijove_34_Composite.png');
+INSERT INTO moons (name, planet_id, orbital_period, mean_radius, image) VALUES ('Calisto', 5, '16 days', '2410km', 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Callisto_-_July_8_1979_%2838926064465%29.jpg');
 

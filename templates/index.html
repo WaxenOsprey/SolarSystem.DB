@@ -3,17 +3,18 @@
 
 <section id="home-page">
     <p>Login</p>
-    <p>This is the form for a user to enter their name</p>
+
 
     <div class="dropdown">
       <button class="dropbtn">Login</button>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        {% for user in users %}
+          <a href="/users/{{user.id}}">{{ user.name }}</a>
+        {% endfor %}
       </div>
     </div>
 
+<p>This is the form for a user to enter their name</p>
 <form action="/" method="post">
     <label for="name"></label>
     <input type="text" id="name" name="name" placeholder="Name" required autofocus>
@@ -21,5 +22,6 @@
 </form>
 
 </section>
+
 
 {% endblock %}
