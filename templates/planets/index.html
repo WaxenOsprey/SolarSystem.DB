@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="sun">
+<div class="planet-container">
 {% for planet in all_planets %}
   <div class="planet">
-    <div class="content">
       <a href="/planets/{{planet.id}}">{{planet.name}}</a>
-    </div>
-    <img src="{{planet.image}}" alt="planet image" width="10%" height="10%">
+      <a href="/planets/{{planet.id}}"><img src="{{planet.image}}" alt="planet picture" style="width:10%;height:10%;"></a>
   </div>
 </div>
 {% endfor %}

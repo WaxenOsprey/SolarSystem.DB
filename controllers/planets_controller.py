@@ -67,8 +67,9 @@ def update_planet(id):
     name = request.form['name']
     mass = request.form['mass']
     temp = request.form['temp']
-    gravity = request.form['temp']
-    new_planet = Planet(name, mass, temp, gravity, id)
+    gravity = request.form['gravity']
+    image = request.form['image']
+    new_planet = Planet(name, mass, temp, gravity, image, id)
 
     user = user_repository.select_active_user()
     planet_to_update = planet_repository.select(id)
@@ -76,7 +77,6 @@ def update_planet(id):
     visit_to_update.mark_altered()
     visit_to_update.location = new_planet.name
     visit_repository.update_visit(visit_to_update)
-
     planet_repository.update(new_planet)
 
 

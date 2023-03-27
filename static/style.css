@@ -1,8 +1,59 @@
 body, html {
   height: 100%;
   font-family: 'Roboto Condensed';font-size: 22px;color: aquamarine;
+}
+
+.site-title {
+  font-size: 48px;
+  font-weight: bolder;
+  color: cornflowerblue;
+}
+.base-menu {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
 
 }
+
+.menu > ul > li {
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  justify-content: flex-start;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.menu > li > a:link {
+  text-decoration: none;
+  color: aquamarine;
+}
+
+.menu > li > a:visited {
+  text-decoration: none;
+  color: aquamarine;
+}
+
+.menu > li > a:hover {
+  text-decoration: none;
+  color: hotpink;
+}
+
+.menu > li > a:active {
+  text-decoration: none;
+  color: red;
+}
+
 
 .home-body {
   background-color: black;
@@ -16,9 +67,6 @@ body, html {
   background-size: cover;
 }
 
-.home-page {
-  background-image: url("img/sun.png");
-}
 
 /* .content {
   border-width: 2px;

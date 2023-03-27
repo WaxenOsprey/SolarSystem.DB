@@ -40,7 +40,7 @@ CREATE TABLE visits (
 );
 
 INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Mercury', '0.055 Earths', '-73℃ - 164℃', '0.38g', 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg');
-INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Venus', '0.815 Earths', '464℃', '0.904g', 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Venus_2_Approach_Image.jpg');
+INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Venus', '0.815 Earths', '464℃', '0.904g', 'http://images2.wikia.nocookie.net/__cb20100109164214/space/images/c/c6/Venus.jpg');
 INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Earth', '1.0 Earths', '14℃', '1.0g', 'https://upload.wikimedia.org/wikipedia/commons/c/cb/The_Blue_Marble_%28remastered%29.jpg');
 INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Mars', '0.107 Earths', '-60℃', '0.37g', 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Tharsis_and_Valles_Marineris_-_Mars_Orbiter_Mission_%2830055660701%29.png');
 INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Jupiter', '317.8 Earths', '-108℃', '2.52g', 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Jupiter_New_Horizons.jpg');

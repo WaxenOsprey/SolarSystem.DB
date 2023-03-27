@@ -23,3 +23,14 @@ def update_visit(visit):
     sql = "UPDATE visits SET (user_id, location_name, discovered, altered, destroyed) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [visit.user, visit.location, visit.discovered, visit.altered, visit.destroyed, visit.id]
     run_sql (sql, values) 
+
+def select_all_visits(id):
+    visits = []
+    sql = "SELECT * FROM visits WHERE user_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        visit = Visit(row['user_id'], row['location_name'], row['discovered'], row['altered'], row['discovered'])
+        visits.append(visit)
+    return visits
