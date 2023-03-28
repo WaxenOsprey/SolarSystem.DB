@@ -6,13 +6,15 @@ from models.visit import Visit
 import repositories.planet_repository as planet_repository
 import repositories.visit_repository as visit_repository
 import repositories.user_repository as user_repository
+import repositories.moon_repository as moon_repository
 
 planets_blueprint = Blueprint("planets", __name__)
 
 @planets_blueprint.route("/planets")
 def planets():
     planets = planet_repository.select_all()
-    return render_template("planets/index.html", all_planets = planets)
+    moons = moon_repository.select_all_moons()
+    return render_template("planets/index.html", all_planets = planets, all_moons = moons)
 
 # SHOW (GETS AN INDIVIDUAL PLANET, and renders the single planet page)
 # GET '/planets/<id>'
@@ -20,8 +22,9 @@ def planets():
 def show_planet(id):
     planet = planet_repository.select(id)
     user = user_repository.select_active_user()
+    moons = moon_repository.select_moons(id)
     visit_repository.save_visit(user, planet)
-    return render_template('planets/show.html', planet = planet) 
+    return render_template('planets/show.html', planet = planet, moons = moons) 
 
 
 # GET '/planets/new' (THIS GOES TO PAGE WITH FOR NEW PLANET)

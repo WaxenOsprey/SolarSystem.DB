@@ -1,31 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="moon-page">
+<nav class="moon-nav">
+  <a href="/planets/{{planet.id}}/edit">Edit</a>
+  <a href="/planets/{{planet.id}}/moons">Moons</a>
+
+  <form class="delete-form" action="/planets/{{planet.id}}/delete" method="POST">
+    <button class="destroy-button"><i class="fa-solid fa-bomb fa-2xl" style="color: #ed0202;"></i></button>
+  </form>
+  </nav>
+  
 
     <div class="single-planet-container">
-      <div class="planet-overview">
-        <h1>{{ planet.name }}</h1>
 
-        <p>Mass: {{ planet.mass }}</p>
-        <p>Temperature: {{ planet.temp }}</p>
+      <div class="planet-overview">
+        <h1>{{ planet.name }}___________</h1>
+        <p>Mass: {{ planet.mass }}</p> 
+        <p>Temperature: {{ planet.temp }}</p>  
         <p>Gravity: {{ planet.gravity }}</p>
       </div>
 
       <div class="planet-image">
-        <img src="{{ planet.image }}" alt="The planet {{ planet.name }}" width="50%" height="50%">
+        <img src="{{ planet.image }}" alt="The planet {{ planet.name }}" width="70%" height="70%">
       </div>
-
     </div>
 
-    <nav class="planet-nav">
-    <a href="/planets/{{planet.id}}/edit">Edit</a>
-    <a href="/planets/{{planet.id}}/moons">Moons</a>
-
-    <form class="delete-form" action="/planets/{{planet.id}}/delete" method="POST">
-      <button class="destroy-button"><i class="fa-solid fa-bomb fa-2xl" style="color: #ed0202;"></i></button>
-    </form>
-    </nav>
-    
-
-
+    <div class="moon-list">
+      <h3>Known Moons in {{planet.name}} System:</h3>
+      {% for moon in moons %}
+        <a href="/planets/{{planet.id}}/moons/{{moon.id}}"><img src="{{moon.image}}" alt="moon picture" style="width:5%;height:5%;"></a>
+    {% endfor %}
+    </div>
+</div>
 {% endblock %}
 

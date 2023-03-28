@@ -11,6 +11,16 @@ def save(moon):
     moon.id = id
     return moon
 
+def select_all_moons():
+    moons = []
+    sql = "SELECT * FROM moons"
+    results = run_sql(sql)
+
+    for row in results:
+        moon = Moon(row['name'], row['planet_id'], row['orbital_period'], row ['mean_radius'], row['image'], row['id'])
+        moons.append(moon)
+    return moons
+
 def select_moons(id):
     moons = []
     sql = "SELECT * FROM moons WHERE planet_id = %s"

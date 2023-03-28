@@ -52,11 +52,6 @@ body, html {
   align-items: center;
 }
 
-.planet {
-  padding: 40px;
-}
-
-
 .hide {
   display: none;
 }
@@ -67,14 +62,21 @@ body, html {
   font-size: 36px;
 }
 
+.planets-container {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
 
-
-
+.planet {
+  margin: 40px;
+}
 .menu {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
+  font-size: 36px;
 
 }
 
@@ -146,6 +148,20 @@ ul {
   flex-direction: row-reverse;
   justify-content: space-around;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: flex-start;
   margin: 40px;
+
+}
+
+.moon-list {
+  margin: 40px;
+}
+
+.moon-nav {
+  margin: 40px;
+  display: inline;
+}
+
+.moon-list > h3 {
+  text-decoration: overline;
 }

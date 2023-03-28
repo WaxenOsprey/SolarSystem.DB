@@ -1,18 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="parent-planet-container"></div>
-<div class="planet-container">
-{% for planet in all_planets %}
-  <div class="planet">
-      <a href="/planets/{{planet.id}}"><img src="{{planet.image}}" alt="planet picture" style="width:20%;height:20%;"></a>
-      <p class="hide">____________________________________| {{ planet.name }}</p>
-  </div>
-</div>
-{% endfor %}
 
 <nav class="system">
-<a href="/planets/new">New Planet</a>
-</nav>
+  <a href="/planets/new">New Planet</a>
+  </nav>
+  
+  <div class="planets-container">
+  {% for planet in all_planets %}
+    <div class="planet">
+        <div class="hide">_________________________| {{ planet.name }}</div>
+        <a href="/planets/{{planet.id}}"><img src="{{planet.image}}" alt="planet picture" style="width:25%;height:25%;"></a>
+
+        {% for moon in all_moons %}
+
+          {% if moon.planet == planet.id: %}
+            <a href="/planets/{{planet.id}}/moons/{{moon.id}}"><img src="{{moon.image}}" alt="moon picture" style="width:5%;height:5%;"></a>
+          {% endif %}
+
+        {% endfor %}
+    </div>
+  {% endfor %}
+  </div>
 
 {% endblock %}
