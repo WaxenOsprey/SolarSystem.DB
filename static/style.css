@@ -53,23 +53,27 @@ body, html {
 }
 
 .hide {
-  display: none;
+  /* display: none; */
+  visibility: hidden;
 }
 
 .planet > a:hover + .hide {
-  display: inline;
+  visibility: visible;
   color: aquamarine;
   font-size: 36px;
 }
 
 .planets-container {
-  display: flex;
-  flex-direction: column;
   margin: 40px;
 }
 
 .planet {
   margin: 40px;
+}
+
+.planet-title-moons {
+  display: flex;
+  flex-direction: row;
 }
 .menu {
   display: flex;

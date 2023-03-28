@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<nav class="system">
-  <a href="/planets/new">New Planet</a>
-  </nav>
-  
   <div class="planets-container">
   {% for planet in all_planets %}
     <div class="planet">
@@ -22,5 +17,9 @@
     </div>
   {% endfor %}
   </div>
+
+<nav class="system">
+<a href="/planets/new">New Planet</a>
+</nav>
 
 {% endblock %}
