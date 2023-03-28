@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="moon-page">
-<nav class="moon-nav">
+<div class="planet-page">
+<nav class="planet-nav">
+  <a href="/planets">Back to System</a>
   <a href="/planets/{{planet.id}}/edit">Edit</a>
-  <a href="/planets/{{planet.id}}/moons">Moons</a>
-
   <form class="delete-form" action="/planets/{{planet.id}}/delete" method="POST">
     <button class="destroy-button"><i class="fa-solid fa-bomb fa-2xl" style="color: #ed0202;"></i></button>
   </form>
@@ -21,7 +20,7 @@
       </div>
 
       <div class="planet-image">
-        <img src="{{ planet.image }}" alt="The planet {{ planet.name }}" width="70%" height="70%">
+        <img src="{{ planet.image }}" alt="The planet {{ planet.name }}" width="100%" height="100%">
       </div>
     </div>
 

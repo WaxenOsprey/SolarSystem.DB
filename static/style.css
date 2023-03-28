@@ -46,42 +46,74 @@ body, html {
   display: flex;
   flex-direction: row;
   align-content: center;
+  border-bottom-style: none;
 }
 
-.menu {
-  align-items: center;
-}
 
-.hide {
-  /* display: none; */
-  visibility: hidden;
-}
 
-.planet > a:hover + .hide {
-  visibility: visible;
-  color: aquamarine;
-  font-size: 36px;
-}
-
-.planets-container {
-  margin: 40px;
-}
-
-.planet {
-  margin: 40px;
-}
-
-.planet-title-moons {
-  display: flex;
-  flex-direction: row;
-}
 .menu {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
   font-size: 36px;
+  align-items: center;
 
+}
+
+.planet-card1 {
+  /* background-color: aliceblue; */
+  display: flex;
+  height: 200px;
+  margin: 40px;
+}
+
+.planet-image2 {
+  /* background-color: blue; */
+}
+
+.planet-image2 img {
+  height: 200px;
+}
+
+.planet-details3 {
+  /* background-color: aquamarine; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.planet-title4 {
+  /* background-color: green; */
+  flex-grow: 2;
+}
+
+.planet-title4 > a:link {
+  text-decoration: none;
+  color: aquamarine;
+}
+
+.planet-title4 > a:visited {
+  text-decoration: none;
+  color: aquamarine;
+}
+
+.planet-title4 > a:hover {
+  text-decoration: none;
+  color: hotpink;
+}
+
+.planet-title4 > a:active {
+  text-decoration: none;
+  color: red;
+}
+
+.moon-list5 {
+  /* background-color: blueviolet; */
+  flex-grow: 2;
+}
+
+.moon-list5 img {
+  height: 75px;
 }
 
 .menu > ul > li {
@@ -138,15 +170,6 @@ ul {
   background-size: cover;
 }
 
-.report > ul > li {
-  display: inline;
-}
-
-.report > ul > li > p {
-  display: inline;
-  color: #ff6600
-}
-
 .single-planet-container {
   display: flex;
   flex-direction: row-reverse;
@@ -169,3 +192,74 @@ ul {
 .moon-list > h3 {
   text-decoration: overline;
 }
+
+nav {
+  margin: 40px;
+  color: cornflowerblue;
+  border-width: 5px;
+  border-color: cornflowerblue;
+  border-style: solid;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+nav > a:link {
+  text-decoration: none;
+  font-size: 36px;
+  font-weight: bolder;
+  color: cornflowerblue;
+}
+
+nav > a:visited {
+  text-decoration: none;
+  font-size: 36px;
+  font-weight: bolder;
+  color: cornflowerblue;
+}
+
+nav > a:hover {
+  text-decoration: none;
+  font-size: 36px;
+  font-weight: bolder;
+  color: hotpink;
+}
+
+.planets.nav > a:active {
+  text-decoration: none;
+  font-size: 36px;
+  font-weight: bolder;
+  color: red;
+}
+
+
+.report > ul > li {
+  display: inline;
+}
+
+.report > ul > li > p {
+  display: inline;
+}
+
+
+.discoveries-list > li > p {
+  color: rgb(0, 166, 255);
+}
+
+.discoveries-list {
+  border-top-style: solid;
+  border-color: aquamarine;
+}
+
+.alterations-list > li > p {
+  color: rgb(255, 145, 0);
+}
+
+.destructions-list > li > p {
+  color: red;
+}
+

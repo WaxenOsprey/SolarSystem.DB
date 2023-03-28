@@ -3,40 +3,54 @@
 {% block content %}
 
 <div class="report">
-    <h1>{{ user.name }}'s System Log</h1>
+    <h1>{{ user.name }}'s System Report</h1>
 
-    <p>Total Visits: {{ visits_total }}</p>
-    <ul class="visits-list">
+    {% if visits_total == 1%}
+        <p>{{ visits_total }} visit:</p>
+    {% else %}
+    <p>{{ visits_total }} visits:</p>
+    {% endif %}    <ul class="visits-list">
     {% for visit in visits %}
         <li>
-        <p class="locations">{{ visit.location }}</p>
+        <p class="locations">{{ visit.location }},</p>
         </li>
     {% endfor %}
     </ul>
 
-    <ul class="disoveries-list">
-    <p>Total Discoveries: {{ discovered_total }}</p>
+    <ul class="discoveries-list">
+        {% if discovered_total < 2 %}
+            <p>{{ discovered_total }} discovery:</p>
+        {% else %}
+            <p>{{ discovered_total }} discoveries:</p>
+        {% endif %}
     {% for discovery in discoveries %}
         <li>
-        <p class="locations"> {{ discovery.location }} </p>
+        <p class="locations"> {{ discovery.location }},</p>
         </li>
     {% endfor %}
     </ul>
 
     <ul class="alterations-list">
-    <p>Total Alterations: {{ altered_total }}</p>
+    {% if altered_total < 2 %}
+        <p>{{ altered_total }} alteration:</p>
+    {% else %}
+        <p>{{ altered_total }} alterations:</p>
+    {% endif %}
     {% for alteration in alterations %}
         <li>
-        <p class="locations"> {{ alteration.location }}</p>
+        <p class="locations"> {{ alteration.location }},</p>
         </li>
     {% endfor %}
     </ul>
 
     <ul class="destructions-list">
-    <p>Total Destructions: {{ destroyed_total }}</p>
-    {% for destruction in destructions %}
+        {% if destroyed_total < 2 %}
+            <p>{{ destroyed_total }} destruction:</p>
+        {% else %}
+            <p>{{ destroyed_total }} destructions:</p>
+        {% endif %}    {% for destruction in destructions %}
         <li>
-        <p class="locations"> {{ destruction.location }}</p>
+        <p class="locations"> {{ destruction.location }},</p>
         </li>
     {% endfor %}
     </ul>
