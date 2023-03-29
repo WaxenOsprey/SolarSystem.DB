@@ -27,20 +27,18 @@ def show_moon(planet_id, moon_id):
     return render_template("planets/moons/show.html", moon = moon, planet = planet, user = user)
 
     
-# GET '/planets/new' (THIS GOES TO PAGE WITH FOR NEW MOON)
 @moons_blueprint.route("/planets/<planet_id>/moons/new", methods=["GET"])
 def new_moon(planet_id):
     planet_repository.select(planet_id)
     return render_template("planets/moons/new.html", planet_id = planet_id)
 
-@moons_blueprint.route("/planets/<planet_id>/moons/new",  methods=['POST']) # number one 
-def create_moon(planet_id): # number two
-    name = request.form['name']  # number two 
+@moons_blueprint.route("/planets/<planet_id>/moons/new",  methods=['POST']) 
+def create_moon(planet_id):
+    name = request.form['name']
     orbital_period = request.form['orbital_period'] 
     mean_radius = request.form['mean_radius'] 
     image = request.form['image']
     description = request.form['description']
-    #need planet object, cant just use planet_id
     selected_planet = planet_repository.select(planet_id)
     moon = Moon(name, selected_planet, orbital_period, mean_radius, image, description)
     moon_repository.save(moon)
@@ -50,18 +48,14 @@ def create_moon(planet_id): # number two
     visit = visit_repository.select_visit(user, moon)
     visit.mark_discovered()
     visit_repository.update_visit(visit)
-    # needs better url 
     return redirect(url_for('planets.planets'))
 
-# GO TO EDIT PAGE
 @moons_blueprint.route("/planets/<planet_id>/moons/<moon_id>/edit", methods=['GET'])
 def edit_moon(moon_id, planet_id):
-    # possibly reduntant code 
     selected_moon = moon_repository.select_moon(moon_id, planet_id)
     selected_planet = planet_repository.select(planet_id)
     return render_template("planets/moons/edit.html", moon = selected_moon, planet = selected_planet)
 
-# POST FROM EDIT PAGE
 @moons_blueprint.route("/planets/<planet_id>/moons/<moon_id>/edit", methods=['POST'])
 def update_moon(planet_id, moon_id):
     name = request.form['name']
@@ -70,7 +64,6 @@ def update_moon(planet_id, moon_id):
     image = request.form['image']
     description = request.form['description']
     planet = planet_repository.select(planet_id)
-    # possibly need to add moon.id at end
     new_moon = Moon(name, planet, orbital_period, mean_radius, image, description)
     
     user = user_repository.select_active_user()
@@ -81,7 +74,6 @@ def update_moon(planet_id, moon_id):
     visit_repository.update_visit(visit_to_update)    
     moon_repository.update(new_moon)
 
-    # needs better url
     return redirect(url_for('planets.planets'))
 
 @moons_blueprint.route("/planets/<planet_id>/moons/<moon_id>/delete", methods=['POST'])
@@ -94,5 +86,4 @@ def delete_moon(moon_id, planet_id):
     
     moon_repository.delete(moon_id)
 
-    #need better url
     return redirect(url_for('planets.planets'))

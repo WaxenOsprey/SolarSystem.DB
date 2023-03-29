@@ -20,6 +20,8 @@ h1 {
   font-weight: bolder;
   color: cornflowerblue;
   margin: 40px;
+  border-bottom-style: solid;
+  
 }
 
 #site-title > a:link {
@@ -154,11 +156,7 @@ ul {
 
 .home-body {
   background-color: black;
-
-  /* Full height */
   height: 100%;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -173,15 +171,44 @@ ul {
   margin: 40px;
 }
 
+.planet-overview {
+  border-right-color: aquamarine;
+  border-right-style: solid;
+  padding: 40px;
+}
+
+.planet-overview > h1 {
+  border-bottom-style: solid;
+  text-align: left;
+  width: 100%;
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+}
+.planet-overview > p {
+  text-align: end;
+}
+
+#planet-description {
+  font-size: 14px;
+  text-align: justify;
+}
+
+
+
+.planet-image {
+  width: 500%;
+  margin: 40px;
+}
+
 .moon-list {
   margin: 40px;
 }
 
-
-
 .moon-list > h3 {
   text-decoration: overline;
 }
+
 
 nav {
   margin: 40px;
@@ -250,13 +277,11 @@ nav > a:hover {
   margin: 40px;
 }
 
-
 .visit-title {
   font-size: 36px;
   text-decoration: underline;
   display: flex;
 }
-
 
 .report {
   margin: 40px;
@@ -271,7 +296,6 @@ nav > a:hover {
 
 .report > ul > li {
   border-style: solid;
-  /* width: 100%; */
   border-width: 5px;
   border-radius: 10px;
   display: flex;
@@ -279,17 +303,15 @@ nav > a:hover {
   justify-content: center;
   padding: 20px;
   margin: 10px;
-
 }
 
 .report > h1 {
   text-decoration: underline;
-
 }
+
 .report > ul > li > p {
   display: inline;
 }
-
 
 .discoveries-list > li > p {
   color: rgb(0, 166, 255);
@@ -300,11 +322,11 @@ nav > a:hover {
   border-color: rgb(0, 166, 255);
 }
 
-
 .alterations-list > li {
   border-style: solid;
   border-color: rgb(255, 145, 0);
 }
+
 .alterations-list > li > p {
   color: rgb(255, 145, 0);
 }
@@ -405,5 +427,28 @@ button[type=submit]:hover {
 
 .moon-image {
   margin: 40px;
+}
+
+.moon-overview {
+  border-right-color: aquamarine;
+  border-right-style: solid;
+  padding: 40px;
+}
+
+.moon-overview > h1 {
+  border-bottom-style: solid;
+  text-align: left;
+  width: 100%;
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+}
+.moon-overview > p {
+  text-align: end;
+}
+
+#moon-description {
+  font-size: 14px;
+  text-align: justify;
 }
 

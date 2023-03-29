@@ -3,9 +3,6 @@ DROP TABLE IF EXISTS moons;
 DROP TABLE IF EXISTS planets;
 DROP TABLE IF EXISTS users;
 
-
--- use decimal for decimals numbers
-
 CREATE TABLE planets (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),

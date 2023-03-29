@@ -37,12 +37,6 @@ def select(id):
         planet = Planet(result['name'], result['mass'], result['temp'], result['gravity'], result['image'], result['description'], result['id'] )
     return planet
 
-
-# def delete_all():
-#     sql = "DELETE  FROM planets"
-#     run_sql(sql)
-
-
 def delete(id):
     sql = "DELETE  FROM planets WHERE id = %s"
     values = [id]
