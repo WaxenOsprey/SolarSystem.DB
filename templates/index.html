@@ -3,23 +3,22 @@
 
 <section id="home-page">
   <div class="login-panel">
-    <p>Existing user login:</p>
+    <p>Existing User Login:</p>
 
 
     <div class="dropdown">
-      <button class="dropbtn">Login</button>
-      <div class="dropdown-content">
+      <div class="users">
         {% for user in users %}
-          <a href="/users/{{user.id}}">{{ user.name }}</a>
+          <a href="/users/{{user.id}}">{{ user.name }} |</a>
         {% endfor %}
       </div>
     </div>
-    <p>This is the form for a user to enter their name</p>
+    <p>New User Login:</p>
     <form action="/" method="post">
         <label for="name"></label>
         <input type="text" id="name" name="name" placeholder="Name" required autofocus>
-      <button type="submit">Add User</button>
-    </form>
+      <button type="submit">New User</button>
+    </form>    
   </div>
 </section>
 

@@ -4,7 +4,11 @@ body, html {
 }
 
 .login-panel {
-  margin: 40px;
+  margin: 100px;
+}
+
+.login-panel > p {
+  color: cornflowerblue;
 }
 
 .site-title {
@@ -229,13 +233,26 @@ nav > a:hover {
   color: hotpink;
 }
 
-.planets.nav > a:active {
+.planets > nav > a:active {
   text-decoration: none;
   font-size: 36px;
   font-weight: bolder;
   color: red;
 }
 
+.user {
+  display: flex;
+  flex-direction: row;
+}
+
+.user > p {
+  font-size: 24px;
+  color: rgb(255, 145, 0);
+}
+
+.planet-page {
+  margin: 40px;
+}
 
 .report > ul > li {
   display: inline;
@@ -261,5 +278,54 @@ nav > a:hover {
 
 .destructions-list > li > p {
   color: red;
+}
+
+input[type=text] {
+  background-color: black;
+  color: white;
+  height: 40px;
+  border-style: solid;
+  border-color: aquamarine;
+  border-width: 5px;
+}
+
+input[type=text]:focus {
+  background-color: black;
+  color: hotpink;
+}
+
+button[type=submit] {
+  background-color: aquamarine;
+  color: black;
+  border-style: solid;
+  border-color: black;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 20px;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: hotpink;
+}
+
+.users > a:visited {
+  text-decoration: none;
+  font-size: 36px;
+  color: rgb(255, 145, 0);
+}
+
+.users > a:link {
+  text-decoration: none;
+  font-size: 36px;
+  color: rgb(255, 145, 0);
+}
+
+.users > a:hover {
+  text-decoration: none;
+  font-size: 36px;
+  color: hotpink;
 }
 

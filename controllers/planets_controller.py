@@ -24,7 +24,8 @@ def show_planet(id):
     user = user_repository.select_active_user()
     moons = moon_repository.select_moons(id)
     visit_repository.save_visit(user, planet)
-    return render_template('planets/show.html', planet = planet, moons = moons) 
+    user = user_repository.select_active_user()
+    return render_template('planets/show.html', planet = planet, moons = moons, user = user) 
 
 
 # GET '/planets/new' (THIS GOES TO PAGE WITH FOR NEW PLANET)

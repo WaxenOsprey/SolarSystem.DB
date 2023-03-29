@@ -9,7 +9,8 @@
         <p>{{ visits_total }} visit:</p>
     {% else %}
     <p>{{ visits_total }} visits:</p>
-    {% endif %}    <ul class="visits-list">
+    {% endif %}    
+    <ul class="visits-list">
     {% for visit in visits %}
         <li>
         <p class="locations">{{ visit.location }},</p>
@@ -18,7 +19,7 @@
     </ul>
 
     <ul class="discoveries-list">
-        {% if discovered_total < 2 %}
+        {% if discovered_total == 1 %}
             <p>{{ discovered_total }} discovery:</p>
         {% else %}
             <p>{{ discovered_total }} discoveries:</p>
@@ -31,7 +32,7 @@
     </ul>
 
     <ul class="alterations-list">
-    {% if altered_total < 2 %}
+    {% if altered_total == 1 %}
         <p>{{ altered_total }} alteration:</p>
     {% else %}
         <p>{{ altered_total }} alterations:</p>
@@ -44,7 +45,7 @@
     </ul>
 
     <ul class="destructions-list">
-        {% if destroyed_total < 2 %}
+        {% if destroyed_total == 1 %}
             <p>{{ destroyed_total }} destruction:</p>
         {% else %}
             <p>{{ destroyed_total }} destructions:</p>

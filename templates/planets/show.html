@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="planet-page">
+
+<nav class="user"><p>Welcome: {{ user.name }}</p></nav>
+
 <nav class="planet-nav">
   <a href="/planets">Back to System</a>
   <a href="/planets/{{planet.id}}/edit">Edit</a>
+  <a href="/planets/{{planet.id}}/moons/new">New Moon</a>
+
   <form class="delete-form" action="/planets/{{planet.id}}/delete" method="POST">
-    <button class="destroy-button"><i class="fa-solid fa-bomb fa-2xl" style="color: #ed0202;"></i></button>
+    <button class="destroy-button">DELETE</i></button>
   </form>
   </nav>
+
   
 
     <div class="single-planet-container">
