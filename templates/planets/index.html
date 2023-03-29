@@ -2,27 +2,34 @@
 
 {% block content %}
 
-<nav class="planets-nav">
-  <a href="/planets/new">New Planet</a>
-</nav>
+<div class="planets-index-page">
+  <nav class="user"><p>Welcome: {{ user.name }}</p></nav>
 
-{% for planet in all_planets %}
-  
-<div class="planet-card1">
-  <div class="planet-image2">
-    <a href="/planets/{{planet.id}}"><img src="{{planet.image}}" alt=""></a>
-  </div>
-  <div class="planet-details3">
-    <div class="planet-title4">_________________________________________ <a href="/planets/{{planet.id}}">{{planet.name}}</a></div>
-    <div class="moon-list5">
-      {% for moon in all_moons %}
-        {% if moon.planet == planet.id %}
-        <a href="/planets/{{planet.id}}/moons/{{moon.id}}"><img src="{{moon.image}}" alt=""></a>
-        {% endif %}
-      {% endfor %}
+
+  <nav class="planets-nav">
+    <a href="/planets/new">New Planet</a>
+  </nav>
+
+  <h1>System Overview</h1>
+
+  {% for planet in all_planets %}
+    
+  <div class="planet-card1">
+    <div class="planet-image2">
+      <a href="/planets/{{planet.id}}"><img src="{{planet.image}}" alt=""></a>
+    </div>
+    <div class="planet-details3">
+      <div class="planet-title4">_________________________________________ <a href="/planets/{{planet.id}}">{{planet.name}}</a></div>
+      <div class="moon-list5">
+        {% for moon in all_moons %}
+          {% if moon.planet == planet.id %}
+          <a href="/planets/{{planet.id}}/moons/{{moon.id}}"><img src="{{moon.image}}" alt=""></a>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
-</div>
+</div> 
 
 {% endfor %}
 

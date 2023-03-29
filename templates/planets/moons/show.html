@@ -1,15 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div>
-    <p>{{ moon.name }} this is the page for an individual moon</p>
-    <p><img src="{{ moon.image }}" alt="The moon {{ moon.name }}" width="550" height="550"></p>
-    <a href="/planets/{{planet.id}}/moons/{{moon.id}}/edit">Edit</a>
+
+  <div class="moon-page">
+
+    <nav class="user"><p>Welcome: {{ user.name }}</p></nav>
+
+    <nav class="moon-nav">
+      <a href="/planets/{{planet.id}}">Back to Planet</a>
+      <a href="/planets/{{planet.id}}/moons/{{moon.id}}/edit">Edit</a>
+      <a href="/planets/{{planet.id}}/moons/new">New Moon</a>
+    
+      <form class="delete-form" action="/planets/{{planet.id}}/moons/{{moon.id}}/delete" method="POST">
+        <button class="destroy-button">DELETE</button>
+      </form>
+  
+    </nav>
+
+    <div class="single-moon-container">
+
+      <div class="moon-overview">
+      <h1>{{moon.name}}___________</h1>
+      <p>Orbital Period: {{ moon.orbital_period }}</p>
+      <p>Mean Radius: {{ moon.mean_radius }}</p>
+      </div>
+
+      <div class="moon-image">
+        <img src="{{ moon.image }}" alt="The moon {{ moon.name }}" width="550" height="550">
+      </div>
 
 
-    <form class="delete-form" action="/planets/{{planet.id}}/moons/{{moon.id}}/delete" method="POST">
-      <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
-    </form>
+    </div>
+
+
+
 
   </div>
 

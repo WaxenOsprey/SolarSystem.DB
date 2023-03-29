@@ -40,7 +40,7 @@ CREATE TABLE visits (
 );
 
 INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Mercury', '0.055', 'n/a', '0.38', 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg');
-INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Venus', '0.815', '464', '0.9', 'http://images2.wikia.nocookie.net/__cb20100109164214/space/images/c/c6/Venus.jpg');
+INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Venus', '0.815', '464', '0.9', 'https://upload.wikimedia.org/wikipedia/commons/5/54/Venus_-_December_23_2016.png');
 INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Earth', '1.0', '14', '1.0', 'https://upload.wikimedia.org/wikipedia/commons/c/cb/The_Blue_Marble_%28remastered%29.jpg');
 INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Mars', '0.107', '-60', '0.37', 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Tharsis_and_Valles_Marineris_-_Mars_Orbiter_Mission_%2830055660701%29.png');
 INSERT INTO planets (name, mass, temp, gravity, image) VALUES ('Jupiter', '317.8', '-108', '2.52', 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Jupiter_New_Horizons.jpg');

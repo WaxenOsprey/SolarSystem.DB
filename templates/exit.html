@@ -6,52 +6,53 @@
     <h1>{{ user.name }}'s System Report</h1>
 
     {% if visits_total == 1%}
-        <p>{{ visits_total }} visit:</p>
+        <p class="visit-title">{{ visits_total }} Visit:</p>
     {% else %}
-    <p>{{ visits_total }} visits:</p>
+    <p class="visit-title">{{ visits_total }} Visits:</p>
     {% endif %}    
     <ul class="visits-list">
     {% for visit in visits %}
         <li>
-        <p class="locations">{{ visit.location }},</p>
+        <p class="locations">{{ visit.location }}</p>
         </li>
     {% endfor %}
     </ul>
 
     <ul class="discoveries-list">
         {% if discovered_total == 1 %}
-            <p>{{ discovered_total }} discovery:</p>
+            <p>{{ discovered_total }} Discovery:</p>
         {% else %}
-            <p>{{ discovered_total }} discoveries:</p>
+            <p>{{ discovered_total }} Discoveries:</p>
         {% endif %}
     {% for discovery in discoveries %}
         <li>
-        <p class="locations"> {{ discovery.location }},</p>
+        <p class="locations"> {{ discovery.location }}</p>
         </li>
     {% endfor %}
     </ul>
 
     <ul class="alterations-list">
     {% if altered_total == 1 %}
-        <p>{{ altered_total }} alteration:</p>
+        <p>{{ altered_total }} Edit:</p>
     {% else %}
-        <p>{{ altered_total }} alterations:</p>
+        <p>{{ altered_total }} Edits:</p>
     {% endif %}
     {% for alteration in alterations %}
         <li>
-        <p class="locations"> {{ alteration.location }},</p>
+        <p class="locations"> {{ alteration.location }}</p>
         </li>
     {% endfor %}
     </ul>
 
     <ul class="destructions-list">
-        {% if destroyed_total == 1 %}
-            <p>{{ destroyed_total }} destruction:</p>
-        {% else %}
-            <p>{{ destroyed_total }} destructions:</p>
-        {% endif %}    {% for destruction in destructions %}
+    {% if destroyed_total == 1 %}
+        <p>{{ destroyed_total }} Deletion:</p>
+    {% else %}
+        <p>{{ destroyed_total }} Deletions:</p>
+    {% endif %}
+    {% for destruction in destructions %}
         <li>
-        <p class="locations"> {{ destruction.location }},</p>
+        <p class="locations"> {{ destruction.location }}</p>
         </li>
     {% endfor %}
     </ul>

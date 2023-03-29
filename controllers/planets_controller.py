@@ -14,7 +14,8 @@ planets_blueprint = Blueprint("planets", __name__)
 def planets():
     planets = planet_repository.select_all()
     moons = moon_repository.select_all_moons()
-    return render_template("planets/index.html", all_planets = planets, all_moons = moons)
+    user = user_repository.select_active_user()
+    return render_template("planets/index.html", all_planets = planets, all_moons = moons, user = user)
 
 # SHOW (GETS AN INDIVIDUAL PLANET, and renders the single planet page)
 # GET '/planets/<id>'
