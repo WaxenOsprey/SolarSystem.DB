@@ -44,8 +44,9 @@ def create_planet():
     temp = request.form['temp'] 
     gravity = request.form['gravity']
     image = request.form['image']
+    description = request.form['description']
     # create new planet object with values from vars
-    planet = Planet(name, mass, temp, gravity, image) 
+    planet = Planet(name, mass, temp, gravity, image, description) 
     # saves to db
     planet_repository.save(planet)
     
@@ -74,7 +75,9 @@ def update_planet(id):
     temp = request.form['temp']
     gravity = request.form['gravity']
     image = request.form['image']
-    new_planet = Planet(name, mass, temp, gravity, image, id)
+    description = request.form['description']
+    # took id out of here too
+    new_planet = Planet(name, mass, temp, gravity, image, description)
 
     user = user_repository.select_active_user()
     planet_to_update = planet_repository.select(id)

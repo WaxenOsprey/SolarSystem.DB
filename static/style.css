@@ -309,6 +309,11 @@ nav > a:hover {
   color: rgb(255, 145, 0);
 }
 
+.destructions-list > li {
+  border-style: solid;
+  border-color: red;
+}
+
 .destructions-list > li > p {
   color: red;
 }

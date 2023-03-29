@@ -31,6 +31,6 @@ def select_all_visits(id):
     results = run_sql(sql, values)
 
     for row in results:
-        visit = Visit(row['user_id'], row['location_name'], row['discovered'], row['altered'], row['discovered'])
+        visit = Visit(row['user_id'], row['location_name'], row['discovered'], row['altered'], row['destroyed'])
         visits.append(visit)
     return visits

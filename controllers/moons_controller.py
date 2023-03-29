@@ -39,9 +39,10 @@ def create_moon(planet_id): # number two
     orbital_period = request.form['orbital_period'] 
     mean_radius = request.form['mean_radius'] 
     image = request.form['image']
+    description = request.form['description']
     #need planet object, cant just use planet_id
     selected_planet = planet_repository.select(planet_id)
-    moon = Moon(name, selected_planet, orbital_period, mean_radius, image)
+    moon = Moon(name, selected_planet, orbital_period, mean_radius, image, description)
     moon_repository.save(moon)
 
     user = user_repository.select_active_user()
@@ -67,8 +68,10 @@ def update_moon(planet_id, moon_id):
     orbital_period = request.form['orbital_period']
     mean_radius = request.form['mean_radius']
     image = request.form['image']
+    description = request.form['description']
     planet = planet_repository.select(planet_id)
-    new_moon = Moon(name, planet, orbital_period, mean_radius, image, moon_id)
+    # possibly need to add moon.id at end
+    new_moon = Moon(name, planet, orbital_period, mean_radius, image, description)
     
     user = user_repository.select_active_user()
     moon_to_update = moon_repository.select_moon(moon_id, planet_id)
