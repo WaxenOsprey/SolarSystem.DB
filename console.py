@@ -9,3 +9,7 @@ import repositories.moon_repository as moon_repository
 import repositories.user_repository as user_repository
 import repositories.visit_repository as visit_repository
 
+visit1 = Visit("Paul", "Mars")
+
+print(visit1.user)
+print(visit1.discovered)
