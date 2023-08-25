@@ -1,7 +1,25 @@
 
+# SolarSystem.DB 🚀✨🪐
 
 ## Project Setup
 
+### Install Homebrew
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+### Clone the repo
+
+```
+git clone https://github.com/WaxenOsprey/SolarSystem.DB.git
+```
+
+### Install PostgreSQL
+
+```
+brew install postgresql
+```
 
 ### Install Python3
 
@@ -34,19 +52,18 @@ createdb solar_system
 flask run
 ```
 
+
 ## Project Brief
 
 ### SolarSystem.DB
 
-Build an app that allows a user to travel, explore and catalogue the solar system.
+Build an app that allows a user to explore and catalogue the solar system.
 
 ### MVP
 
 - The app should allow the user to create (discover) new moons and planets and edit their properties
 - The app should allow the user to travel from the sun to each planet/moon and view information about the planet
 - The app should allow the user to destroy any solar system object.
-
-### UX inspired (loosely) by NASA website and by games such as Elite Dangerous
 
 ### Possible Extensions
 
